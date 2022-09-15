@@ -1,0 +1,27 @@
+{
+  "name": "pasapalabra",
+  "version": "1.0.0",
+  "description": "[![HTML5 & CSS3 Standard](https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png)](http://www.w3.org/)  [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "scss": "node-sass app/scss -o app/css",
+    "scss:watch": "node-sass --watch app/scss -o app/css"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HariSweetQ/pasapalabra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HariSweetQ/pasapalabra/issues"
+  },
+  "homepage": "https://github.com/HariSweetQ/pasapalabra#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

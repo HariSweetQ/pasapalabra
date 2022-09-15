@@ -411,11 +411,18 @@ body {
   font-size: 1.25rem;
   font-weight: 900; }
 
+#app {
+  display: flex; }
+  #app game-panel {
+    max-width: 50%;
+    flex: 1;
+    z-index: 0; }
+    #app game-panel[active] {
+      z-index: 1; }
+
 @media (min-width: 54.75em) {
   section {
-    display: flex;
-    height: 95vh;
-    min-height: none; } }
+    height: 95vh; } }
 
 .hidden {
   display: none; }
@@ -423,14 +430,41 @@ body {
 /* Circle
  * ----------------------------------------------------------------------------- */
 .circle-container {
-  padding-top: 2em;
-  width: 100%; }
+  width: 100%;
+  padding-top: 2em; }
   @media (min-width: 54.75em) {
     .circle-container {
       position: relative;
-      width: 50%;
-      height: 100%;
+      height: 80%;
       padding-top: 0; } }
+
+.player0 .circle {
+  zoom: 1.5; }
+  .player0 .circle .item:not(.item--success):not(.item--failure) {
+    background-image: radial-gradient(circle, #0074d9, #004b8d); }
+
+.player0 .scoreboard {
+  zoom: 1.5; }
+  @media (min-width: 54.75em) {
+    .player0 .scoreboard {
+      zoom: 1.5; } }
+  .player0 .scoreboard .timer,
+  .player0 .scoreboard .score {
+    background-image: radial-gradient(circle, #0074d9, #004b8d); }
+
+.player1 .circle {
+  zoom: 1.5; }
+  .player1 .circle .item:not(.item--success):not(.item--failure) {
+    background-image: radial-gradient(circle, #b64926, #ffb03b); }
+
+.player1 .scoreboard {
+  zoom: 1.5; }
+  @media (min-width: 54.75em) {
+    .player1 .scoreboard {
+      zoom: 1.5; } }
+  .player1 .scoreboard .timer,
+  .player1 .scoreboard .score {
+    background-image: radial-gradient(circle, #b64926, #ffb03b); }
 
 .circle {
   position: relative;
@@ -452,53 +486,51 @@ body {
     .circle > *:nth-of-type(1) {
       transform: rotate(270deg) translate(10.6875em) rotate(-270deg); }
     .circle > *:nth-of-type(2) {
-      transform: rotate(284.4deg) translate(10.6875em) rotate(-284.4deg); }
+      transform: rotate(285deg) translate(10.6875em) rotate(-285deg); }
     .circle > *:nth-of-type(3) {
-      transform: rotate(298.8deg) translate(10.6875em) rotate(-298.8deg); }
+      transform: rotate(300deg) translate(10.6875em) rotate(-300deg); }
     .circle > *:nth-of-type(4) {
-      transform: rotate(313.2deg) translate(10.6875em) rotate(-313.2deg); }
+      transform: rotate(315deg) translate(10.6875em) rotate(-315deg); }
     .circle > *:nth-of-type(5) {
-      transform: rotate(327.6deg) translate(10.6875em) rotate(-327.6deg); }
+      transform: rotate(330deg) translate(10.6875em) rotate(-330deg); }
     .circle > *:nth-of-type(6) {
-      transform: rotate(342deg) translate(10.6875em) rotate(-342deg); }
+      transform: rotate(345deg) translate(10.6875em) rotate(-345deg); }
     .circle > *:nth-of-type(7) {
-      transform: rotate(356.4deg) translate(10.6875em) rotate(-356.4deg); }
+      transform: rotate(360deg) translate(10.6875em) rotate(-360deg); }
     .circle > *:nth-of-type(8) {
-      transform: rotate(370.8deg) translate(10.6875em) rotate(-370.8deg); }
+      transform: rotate(375deg) translate(10.6875em) rotate(-375deg); }
     .circle > *:nth-of-type(9) {
-      transform: rotate(385.2deg) translate(10.6875em) rotate(-385.2deg); }
+      transform: rotate(390deg) translate(10.6875em) rotate(-390deg); }
     .circle > *:nth-of-type(10) {
-      transform: rotate(399.6deg) translate(10.6875em) rotate(-399.6deg); }
+      transform: rotate(405deg) translate(10.6875em) rotate(-405deg); }
     .circle > *:nth-of-type(11) {
-      transform: rotate(414deg) translate(10.6875em) rotate(-414deg); }
+      transform: rotate(420deg) translate(10.6875em) rotate(-420deg); }
     .circle > *:nth-of-type(12) {
-      transform: rotate(428.4deg) translate(10.6875em) rotate(-428.4deg); }
+      transform: rotate(435deg) translate(10.6875em) rotate(-435deg); }
     .circle > *:nth-of-type(13) {
-      transform: rotate(442.8deg) translate(10.6875em) rotate(-442.8deg); }
+      transform: rotate(450deg) translate(10.6875em) rotate(-450deg); }
     .circle > *:nth-of-type(14) {
-      transform: rotate(457.2deg) translate(10.6875em) rotate(-457.2deg); }
+      transform: rotate(465deg) translate(10.6875em) rotate(-465deg); }
     .circle > *:nth-of-type(15) {
-      transform: rotate(471.6deg) translate(10.6875em) rotate(-471.6deg); }
+      transform: rotate(480deg) translate(10.6875em) rotate(-480deg); }
     .circle > *:nth-of-type(16) {
-      transform: rotate(486deg) translate(10.6875em) rotate(-486deg); }
+      transform: rotate(495deg) translate(10.6875em) rotate(-495deg); }
     .circle > *:nth-of-type(17) {
-      transform: rotate(500.4deg) translate(10.6875em) rotate(-500.4deg); }
+      transform: rotate(510deg) translate(10.6875em) rotate(-510deg); }
     .circle > *:nth-of-type(18) {
-      transform: rotate(514.8deg) translate(10.6875em) rotate(-514.8deg); }
+      transform: rotate(525deg) translate(10.6875em) rotate(-525deg); }
     .circle > *:nth-of-type(19) {
-      transform: rotate(529.2deg) translate(10.6875em) rotate(-529.2deg); }
+      transform: rotate(540deg) translate(10.6875em) rotate(-540deg); }
     .circle > *:nth-of-type(20) {
-      transform: rotate(543.6deg) translate(10.6875em) rotate(-543.6deg); }
+      transform: rotate(555deg) translate(10.6875em) rotate(-555deg); }
     .circle > *:nth-of-type(21) {
-      transform: rotate(558deg) translate(10.6875em) rotate(-558deg); }
+      transform: rotate(570deg) translate(10.6875em) rotate(-570deg); }
     .circle > *:nth-of-type(22) {
-      transform: rotate(572.4deg) translate(10.6875em) rotate(-572.4deg); }
+      transform: rotate(585deg) translate(10.6875em) rotate(-585deg); }
     .circle > *:nth-of-type(23) {
-      transform: rotate(586.8deg) translate(10.6875em) rotate(-586.8deg); }
+      transform: rotate(600deg) translate(10.6875em) rotate(-600deg); }
     .circle > *:nth-of-type(24) {
-      transform: rotate(601.2deg) translate(10.6875em) rotate(-601.2deg); }
-    .circle > *:nth-of-type(25) {
-      transform: rotate(615.6deg) translate(10.6875em) rotate(-615.6deg); }
+      transform: rotate(615deg) translate(10.6875em) rotate(-615deg); }
   @media (min-width: 54.75em) {
     .circle {
       position: relative;
@@ -523,53 +555,51 @@ body {
         .circle > *:nth-of-type(1) {
           transform: rotate(270deg) translate(11.25em) rotate(-270deg); }
         .circle > *:nth-of-type(2) {
-          transform: rotate(284.4deg) translate(11.25em) rotate(-284.4deg); }
+          transform: rotate(285deg) translate(11.25em) rotate(-285deg); }
         .circle > *:nth-of-type(3) {
-          transform: rotate(298.8deg) translate(11.25em) rotate(-298.8deg); }
+          transform: rotate(300deg) translate(11.25em) rotate(-300deg); }
         .circle > *:nth-of-type(4) {
-          transform: rotate(313.2deg) translate(11.25em) rotate(-313.2deg); }
+          transform: rotate(315deg) translate(11.25em) rotate(-315deg); }
         .circle > *:nth-of-type(5) {
-          transform: rotate(327.6deg) translate(11.25em) rotate(-327.6deg); }
+          transform: rotate(330deg) translate(11.25em) rotate(-330deg); }
         .circle > *:nth-of-type(6) {
-          transform: rotate(342deg) translate(11.25em) rotate(-342deg); }
+          transform: rotate(345deg) translate(11.25em) rotate(-345deg); }
         .circle > *:nth-of-type(7) {
-          transform: rotate(356.4deg) translate(11.25em) rotate(-356.4deg); }
+          transform: rotate(360deg) translate(11.25em) rotate(-360deg); }
         .circle > *:nth-of-type(8) {
-          transform: rotate(370.8deg) translate(11.25em) rotate(-370.8deg); }
+          transform: rotate(375deg) translate(11.25em) rotate(-375deg); }
         .circle > *:nth-of-type(9) {
-          transform: rotate(385.2deg) translate(11.25em) rotate(-385.2deg); }
+          transform: rotate(390deg) translate(11.25em) rotate(-390deg); }
         .circle > *:nth-of-type(10) {
-          transform: rotate(399.6deg) translate(11.25em) rotate(-399.6deg); }
+          transform: rotate(405deg) translate(11.25em) rotate(-405deg); }
         .circle > *:nth-of-type(11) {
-          transform: rotate(414deg) translate(11.25em) rotate(-414deg); }
+          transform: rotate(420deg) translate(11.25em) rotate(-420deg); }
         .circle > *:nth-of-type(12) {
-          transform: rotate(428.4deg) translate(11.25em) rotate(-428.4deg); }
+          transform: rotate(435deg) translate(11.25em) rotate(-435deg); }
         .circle > *:nth-of-type(13) {
-          transform: rotate(442.8deg) translate(11.25em) rotate(-442.8deg); }
+          transform: rotate(450deg) translate(11.25em) rotate(-450deg); }
         .circle > *:nth-of-type(14) {
-          transform: rotate(457.2deg) translate(11.25em) rotate(-457.2deg); }
+          transform: rotate(465deg) translate(11.25em) rotate(-465deg); }
         .circle > *:nth-of-type(15) {
-          transform: rotate(471.6deg) translate(11.25em) rotate(-471.6deg); }
+          transform: rotate(480deg) translate(11.25em) rotate(-480deg); }
         .circle > *:nth-of-type(16) {
-          transform: rotate(486deg) translate(11.25em) rotate(-486deg); }
+          transform: rotate(495deg) translate(11.25em) rotate(-495deg); }
         .circle > *:nth-of-type(17) {
-          transform: rotate(500.4deg) translate(11.25em) rotate(-500.4deg); }
+          transform: rotate(510deg) translate(11.25em) rotate(-510deg); }
         .circle > *:nth-of-type(18) {
-          transform: rotate(514.8deg) translate(11.25em) rotate(-514.8deg); }
+          transform: rotate(525deg) translate(11.25em) rotate(-525deg); }
         .circle > *:nth-of-type(19) {
-          transform: rotate(529.2deg) translate(11.25em) rotate(-529.2deg); }
+          transform: rotate(540deg) translate(11.25em) rotate(-540deg); }
         .circle > *:nth-of-type(20) {
-          transform: rotate(543.6deg) translate(11.25em) rotate(-543.6deg); }
+          transform: rotate(555deg) translate(11.25em) rotate(-555deg); }
         .circle > *:nth-of-type(21) {
-          transform: rotate(558deg) translate(11.25em) rotate(-558deg); }
+          transform: rotate(570deg) translate(11.25em) rotate(-570deg); }
         .circle > *:nth-of-type(22) {
-          transform: rotate(572.4deg) translate(11.25em) rotate(-572.4deg); }
+          transform: rotate(585deg) translate(11.25em) rotate(-585deg); }
         .circle > *:nth-of-type(23) {
-          transform: rotate(586.8deg) translate(11.25em) rotate(-586.8deg); }
+          transform: rotate(600deg) translate(11.25em) rotate(-600deg); }
         .circle > *:nth-of-type(24) {
-          transform: rotate(601.2deg) translate(11.25em) rotate(-601.2deg); }
-        .circle > *:nth-of-type(25) {
-          transform: rotate(615.6deg) translate(11.25em) rotate(-615.6deg); } }
+          transform: rotate(615deg) translate(11.25em) rotate(-615deg); } }
   .circle .item {
     display: block;
     width: 2.25em;
@@ -577,7 +607,6 @@ body {
     transition: all .3s ease-in-out;
     border: 2px solid #fff;
     border-radius: 50%;
-    background-image: radial-gradient(circle, #0074d9, #004b8d);
     color: #fff;
     line-height: 2.25em;
     text-align: center;
@@ -588,6 +617,8 @@ body {
     .circle .item--failure {
       background-image: radial-gradient(circle, #b9121b, #8e001c); }
 
+/* Scoreboard
+ * ----------------------------------------------------------------------------- */
 .scoreboard {
   margin: 0 0 1em 2em;
   padding: 0;
@@ -605,7 +636,6 @@ body {
     height: 2.8125em;
     border: 2px solid #fff;
     border-radius: 50%;
-    background-image: radial-gradient(circle, #0074d9, #004b8d);
     color: #fff;
     font-weight: 900;
     line-height: 2.8125em;
@@ -618,7 +648,6 @@ body {
     height: 1.6875em;
     margin-top: .5em;
     border: 2px solid #fff;
-    background-image: radial-gradient(circle, #0074d9, #004b8d);
     color: #fff;
     font-weight: 900;
     line-height: 1.6875em;
@@ -626,6 +655,8 @@ body {
     text-decoration: none;
     cursor: default; }
 
+/* Title
+ * ----------------------------------------------------------------------------- */
 .title-container {
   position: absolute;
   top: 25%;
@@ -640,19 +671,23 @@ body {
     display: none; }
     @media (min-width: 54.75em) {
       .title-container .title {
+        display: block;
         color: #fff;
-        font-size: 2.5rem;
-        display: block; } }
+        font-size: 2.5rem; } }
 
 /* Controls
  * ----------------------------------------------------------------------------- */
 .controls-container {
+  width: 100%;
   padding: 2em 0;
-  width: 100%; }
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
   @media (min-width: 54.75em) {
     .controls-container {
-      position: relative;
-      width: 50%;
       height: 100%;
       padding: 0; } }
   .controls-container .icon-close {
@@ -680,7 +715,13 @@ body {
       background-color: #9ee379; }
       .controls-container .btn--green:hover {
         background-color: #4caf50; }
+    .controls-container .btn--red {
+      background-color: #b9121b; }
+      .controls-container .btn--red:hover {
+        background-color: #8e001c; }
 
+/* New Game
+ * ----------------------------------------------------------------------------- */
 .ng-controls {
   width: 80%;
   max-width: none;
@@ -699,12 +740,14 @@ body {
     color: #fff;
     text-transform: uppercase; }
   .ng-controls p {
-    color: #fff;
-    font-size: .9rem;
-    margin-left: auto;
+    margin-top: 0;
     margin-right: auto;
-    margin-top: 0; }
+    margin-left: auto;
+    color: #fff;
+    font-size: .9rem; }
 
+/* Questions
+ * ----------------------------------------------------------------------------- */
 .question-controls {
   width: 80%;
   max-width: none;
@@ -713,11 +756,9 @@ body {
   @media (min-width: 54.75em) {
     .question-controls {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: 0;
-      transform: translate(-50%, -50%);
-      width: 90%; } }
+      bottom: 0;
+      width: 100%;
+      margin: 0; } }
   .question-controls input {
     height: 45.75px;
     border: 0;
@@ -730,6 +771,8 @@ body {
     color: #fff;
     font-size: 1.75rem; }
 
+/* Play Again
+ * ----------------------------------------------------------------------------- */
 .pa-controls {
   width: 80%;
   max-width: none;
@@ -753,6 +796,8 @@ body {
     color: #fff;
     text-transform: uppercase; }
 
+/* Footer
+ * ----------------------------------------------------------------------------- */
 footer {
   width: 50%;
   height: 5vh;

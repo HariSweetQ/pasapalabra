@@ -10,11 +10,22 @@ body {
 	font-weight: 900;
 }
 
+#app {
+	display: flex;	
+	game-panel {
+		max-width: 50%;
+		flex: 1;
+		z-index: 0;
+		&[active] {
+			z-index: 1;
+		}
+	}
+}
+
 section {
-	@media (min-width: 54.75em) {
-		display: flex;
+	@media (min-width: 54.75em) {	
 		height: 95vh;
-	 }
+	}
 }
 
 .hidden {
@@ -28,14 +39,52 @@ section {
 	padding-top: 2em;
 
 	@media (min-width: 54.75em) {
-		position: relative;
-		width: 50%;
-		height: 100%;
+		position: relative;		
+		height: 80%;
 		padding-top: 0;
 	 }
 }
 
-.circle {
+.player0 {
+	.circle {
+		zoom: $zoom;
+		.item:not(.item--success):not(.item--failure) {
+			background-image: radial-gradient(circle, $c-base, $c-base-darker);			
+		}
+	}
+
+	.scoreboard {
+		zoom: $zoom;
+		@media (min-width: 54.75em) {
+			zoom: $zoom;
+		}
+		.timer,
+		.score {
+			background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		}
+	}
+}
+
+.player1 {
+	.circle {
+		zoom: $zoom;
+		.item:not(.item--success):not(.item--failure) {
+			background-image: radial-gradient(circle, $c-base-alt-darker, $c-base-alt);
+		}
+	}
+	.scoreboard {
+		zoom: $zoom;
+		@media (min-width: 54.75em) {
+			zoom: $zoom;
+		}
+		.timer,
+		.score {
+			background-image: radial-gradient(circle, $c-base-alt-darker, $c-base-alt);
+		}
+	}
+}
+
+.circle {	
 	@include on-circle($nb-items, $s-circle-mobile, $s-item-mobile);
 	left: 50%;
 	transform: translateX(-50%);
@@ -55,14 +104,13 @@ section {
 		height: $s-item;
 		transition: all .3s ease-in-out;
 		border: 2px solid $c-white;
-		border-radius: 50%;
-		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		border-radius: 50%;		
 		color: $c-white;
 		line-height: $s-item;
 		text-align: center;
 		text-decoration: none;
-		cursor: default;
-
+		cursor: default;	
+		
 		&--success {
 			background-image: radial-gradient(circle, $c-success, $c-success-darker);
 		}
@@ -95,8 +143,7 @@ section {
 		width: $s-timer;
 		height: $s-timer;
 		border: 2px solid $c-white;
-		border-radius: 50%;
-		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		border-radius: 50%;		
 		color: $c-white;
 		font-weight: 900;
 		line-height: $s-timer;
@@ -110,8 +157,7 @@ section {
 		width: $w-score;
 		height: $h-score;
 		margin-top: .5em;
-		border: 2px solid $c-white;
-		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		border: 2px solid $c-white;		
 		color: $c-white;
 		font-weight: 900;
 		line-height: $h-score;
@@ -151,12 +197,15 @@ section {
 .controls-container {
 	width: 100%;
 	padding: 2em 0;
+	height: 100%;
+    padding: 0;
+    position: absolute;
+    bottom: 0;    
+    left: 0;
+	text-align: center;
 
-	@media (min-width: 54.75em) {
-		position: relative;
-		width: 50%;
+	@media (min-width: 54.75em) {				
 		height: 100%;
-
 		padding: 0;
 	 }
 
@@ -191,6 +240,14 @@ section {
 
 			&:hover {
 				background-color: $c-success-darker;
+			}
+		}
+
+		&--red {
+			background-color: $c-failure;
+
+			&:hover {
+				background-color: $c-failure-darker;
 			}
 		}
 	}
@@ -234,11 +291,9 @@ section {
 
 	@media (min-width: 54.75em) {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 90%;
-		margin: 0;
-		transform: translate(-50%, -50%);
+		bottom: 0;		
+		width: 100%;
+		margin: 0;		
 	 }
 
 
