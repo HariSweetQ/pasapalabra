@@ -4,7 +4,7 @@
 ---
 ### Configuration
 - Set time and players in config.js file
-- Define question
+- Define questions in app/questions/index.js
 ---
 ### SCSS & Run
 - Install dependencies with `npm install`
