@@ -1,4 +1,4 @@
 export default {
-    seconds: 100,
+    seconds: 200,
     players: 2
 }

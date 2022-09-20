@@ -288,12 +288,14 @@ section {
  * ----------------------------------------------------------------------------- */
 .question-controls {
 	@include wrapper(80%);
+	background-color: $c-success-darker;
 
 	@media (min-width: 54.75em) {
 		position: absolute;
-		bottom: 0;		
+		bottom: -30px;		
 		width: 100%;
 		margin: 0;		
+
 	 }
 
 
