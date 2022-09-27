@@ -404,19 +404,24 @@ i {
 /* -----------------------------------------------------------------------------
  *								$LAYOUT
  * ----------------------------------------------------------------------------- */
+html {
+  height: 100%; }
+
 body {
-  position: relative;
   background-color: #9c27b0;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.25rem;
-  font-weight: 900; }
+  font-weight: 900;
+  height: 100%; }
 
 #app {
-  display: flex; }
+  display: flex;
+  height: 100%; }
   #app game-panel {
     max-width: 50%;
     flex: 1;
-    z-index: 0; }
+    z-index: 0;
+    height: 100%; }
     #app game-panel[active] {
       z-index: 1; }
 
@@ -757,9 +762,11 @@ body {
   @media (min-width: 54.75em) {
     .question-controls {
       position: absolute;
-      bottom: -30px;
+      bottom: 0px;
       width: 100%;
-      margin: 0; } }
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box; } }
   .question-controls input {
     height: 45.75px;
     border: 0;

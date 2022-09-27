@@ -2,16 +2,21 @@
  *								$LAYOUT
  * ----------------------------------------------------------------------------- */
 
-body {
-	position: relative;
+html { 
+	height: 100%;
+}
+
+body {	
 	background-color: $c-bg;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.25rem;
 	font-weight: 900;
+	height: 100%;
 }
 
 #app {
 	display: flex;	
+	height: 100%;
 	game-panel {
 		max-width: 50%;
 		flex: 1;
@@ -19,6 +24,7 @@ body {
 		&[active] {
 			z-index: 1;
 		}
+		height: 100%;
 	}
 }
 
@@ -292,10 +298,11 @@ section {
 
 	@media (min-width: 54.75em) {
 		position: absolute;
-		bottom: -30px;		
+		bottom: 0px;		
 		width: 100%;
 		margin: 0;		
-
+		padding: 20px;
+		box-sizing: border-box;
 	 }
 
 

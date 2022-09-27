@@ -65,7 +65,7 @@ class GamePanel extends LitElement {
 
     stopPlaying() {
         clearTimeout(this.timeout);
-        this.timeout = null;
+        this.timeout = null;        
     }
 
     showDefinition() {
@@ -111,7 +111,15 @@ class GamePanel extends LitElement {
         }                
     }
 
-    pasapalabra() {                    
+    userUpdate() {
+        this.dispatchEvent(new CustomEvent('user-update', { 
+            detail: {
+                player: {...this.player}
+            }
+        }));
+    }
+
+    pasapalabra(correct) {                    
         
         if (!document.querySelector(`game-panel[ended]`))
         {
@@ -121,14 +129,21 @@ class GamePanel extends LitElement {
                 playing: false
             };
 
+            this.userUpdate();
             this.changePlayer();        
         } else {            
             if (this.player.remainingWords)
             {
-                this.player = {
-                    ...this.player,
-                    pos: this.player.remainingWords ? this.nextPos(this.player.pos) : this.player.remainingWords,                
-                };
+                this.player.pos = this.player.remainingWords ? this.nextPos(this.player.pos) : this.player.remainingWords;                
+                this.userUpdate();
+
+                if (!correct) {                                                        
+                    this.stopPlaying();
+                    this.showQuestions = false;
+                    this.active = false;                    
+                    document.querySelector('.global-controls').classList.remove("hidden");                                                                                   
+                    this.userUpdate();
+                }
             } else {
                 this.endGame()
             }
@@ -150,7 +165,7 @@ class GamePanel extends LitElement {
         if (this.player.remainingWords)
         {
             if (!correct) {
-                this.pasapalabra();
+                this.pasapalabra(correct);
             } else {            
                 this.player = {
                     ...this.player,
@@ -167,11 +182,7 @@ class GamePanel extends LitElement {
     changePlayer() {        
         this.showQuestions = false;
         this.active = false;
-        this.dispatchEvent(new CustomEvent('user-change', {
-            detail: {
-                player: {...this.player}
-            }
-        }));
+        this.dispatchEvent(new CustomEvent('user-change'));
     }
 
     render() {
